@@ -1,8 +1,9 @@
 {
-  "name": "styled-component-sample",
+  "name": "styled-components-sample",
   "description": "",
   "version": "0.1.0",
-  "author": "",
+  "author": "8zk",
+  "homepage": "https://8zk.github.io/styled-components-sample",
   "dependencies": {
     "prop-types": "^15.6.0",
     "react": "^16.0.0",
@@ -40,16 +41,15 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "prettier": "prettier --single-quote --print-width=120 --trailing-comma es5 --no-semi",
-    "format": "npm run prettier -- --write '{,!(build|generators)/**/}*.js'",
+    "format": "npm run prettier -- --write '{,!(build)/**/}*.js'",
     "precommit": "lint-staged",
     "eslint-check": "eslint --print-config .eslintrc.js | eslint-config-prettier-check",
     "lint": "eslint **/*.js --quiet",
     "lint-fix": "eslint --fix",
-    "generate": "plop --plopfile generators/index.js",
     "deploy": "gh-pages -d build"
   },
   "lint-staged": {
-    "{,!(build|generators)/**/}*.js": [
+    "{,!(build)/**/}*.js": [
       "npm run prettier -- --write",
       "git add"
     ]

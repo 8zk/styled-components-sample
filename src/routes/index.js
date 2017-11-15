@@ -8,12 +8,17 @@ import {
 import { Header } from 'components'
 import { BrowserRouter, Route } from 'react-router-dom'
 import styled from 'styled-components'
+import { name as repositoryName } from '../../package.json'
 
-const Container = styled.div`text-align: center;`
+const isProduction = process.env.NODE_ENV === 'production'
+const basename = isProduction ? `/${repositoryName}` : ''
+const Container = styled.div`
+  text-align: center;
+`
 
 function Routes() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={basename}>
       <Container>
         <Header />
         <Route path="/" component={Home} exact />
